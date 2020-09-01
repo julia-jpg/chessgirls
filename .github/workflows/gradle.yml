@@ -27,17 +27,9 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: CheckStyle
-        path: build/reports/checkstyle/checkstyle.html
-    - name: Test Coverage Build
-      run: ./gradlew build jacocoTestReport
+        path: build/reports/checkstyle/
     - name: Test Coverage Upload
       uses: actions/upload-artifact@v2
       with:
        name: TestCoverage
        path: build/reports/jacoco/test/html/
-    - name: Build
-      uses: actions/upload-artifact@v2
-      with:
-       name: Build
-       path: build/distributions/
-
